@@ -15,7 +15,7 @@ export default function PortfolioModal({ imgUrl, skills = [], desc, link }) {
             <img
               src={imgUrl}
               alt=""
-              className="absolute object-cover h-full w-full"
+              className="absolute object-contain h-full w-full"
             />
           </div>
           <div className="flex gap-1">

@@ -71,7 +71,6 @@ function App() {
   const [desc, setDesc] = useState('');
   const [link, setLink] = useState('');
 
-
   const [layout, setLayout] = useState(0);
   const [active, setActive] = useState(null);
 
@@ -250,30 +249,34 @@ function App() {
               key={index}
               className={`relative group overflow-hidden ${layout === 1 && index === 0 ? 'col-span-2' : ''}`}
             >
-              <div className="absolute top-0 left-0  bg-[#fffaf3] pb-3 pr-3 pl-1 pt-1 rounded-br-4xl">
-                <span className="absolute top-0 -right-2 w-2 h-2 bg-transparent rounded-tl-full shadow-[-5px_-5px_0_5px_#fffaf3]" />
-                <span className="absolute -bottom-2 left-0 w-2 h-2 bg-transparent rounded-tl-full shadow-[-5px_-5px_0_5px_#fffaf3]" />
+              <div className="absolute top-0 left-0  bg-[#fffaf3] pb-1.5 sm:pb-3 pr-1.5 sm:pr-3 pl-0.5 sm:pl-1 pt-0.5 sm:pt-1 rounded-br-3xl sm:rounded-br-4xl">
+                <span className="absolute top-0 -right-1 sm:-right-2 w-1 sm:w-2 h-1 sm:h-2 bg-transparent rounded-tl-full shadow-[-2.5px_-2.5px_0_2.5px_#fffaf3] sm:shadow-[-5px_-5px_0_5px_#fffaf3]" />
+                <span className="absolute -bottom-1 sm:-bottom-2 left-0 w-1 sm:w-2 h-1 sm:h-2 bg-transparent rounded-tl-full shadow-[-2.5px_-2.5px_0_2.5px_#fffaf3] sm:shadow-[-5px_-5px_0_5px_#fffaf3]" />
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
                     setImgUrl(project.image);
                     setSkills(project.skills);
                     setDesc(project.desc);
-                    setLink(project.link)
+                    setLink(project.link);
                     document.getElementById('modal_portfolio').showModal();
                   }}
-                  className="bg-[#222222] p-2.5 rounded-br-2xl"
+                  className="bg-[#222222] p-1.5 sm:p-2.5 rounded-br-2xl"
                 >
-                  <RiInfoI className="sm:text-lg text-white" />
+                  <RiInfoI className="text-xs sm:text-lg text-white" />
                 </button>
               </div>
 
-              <div className="absolute z-20 bottom-0 right-0 bg-[#fffaf3] pl-3 pt-3 pb-1 pr-1 rounded-tl-4xl flex items-center justify-center">
-                <span className="absolute -top-2 right-0 w-2 h-2 bg-transparent rounded-br-full shadow-[5px_5px_0_5px_#fffaf3]" />
-                <span className="absolute bottom-0 -left-2 w-2 h-2 bg-transparent rounded-br-full shadow-[5px_5px_0_5px_#fffaf3]" />
+              <div className="absolute z-20 bottom-0 right-0 bg-[#fffaf3] pl-1.5 sm:pl-3 pt-1.5 sm:pt-3 pb-0.5 pr-0.5  sm:pb-1 sm:pr-1 rounded-tl-3xl sm:rounded-tl-4xl flex items-center justify-center">
+                <span className="absolute -top-1 sm:-top-2 right-0 w-1 h-1 sm:w-2 sm:h-2 bg-transparent rounded-br-full shadow-[2.5px_2.5px_0_2.5px_#fffaf3] sm:shadow-[5px_5px_0_5px_#fffaf3]" />
+                <span className="absolute bottom-0 -left-1 sm:-left-2 w-1 h-1 sm:w-2 sm:h-2 bg-transparent rounded-br-full shadow-[2.5px_2.5px_0_2.5px_#fffaf3] sm:shadow-[5px_5px_0_5px_#fffaf3]" />
 
-                <a href={project.link} target='_blank'  className="bg-[#222222] p-2.5 rounded-tl-2xl">
-                  <RiArrowRightUpLine className="sm:text-lg text-white" />
+                <a
+                  href={project.link}
+                  target="_blank"
+                  className="bg-[#222222] p-1.5 sm:p-2.5 rounded-tl-xl sm:rounded-tl-2xl"
+                >
+                  <RiArrowRightUpLine className="text-xs sm:text-lg text-white" />
                 </a>
               </div>
               <img
@@ -331,7 +334,7 @@ function App() {
       {/* <section id='contact' className='min-h-[500px] bg-[#fffaf3]'>
 
       </section> */}
-      <PortfolioModal imgUrl={imgUrl} skills={skills} desc={desc} link={link}  />
+      <PortfolioModal imgUrl={imgUrl} skills={skills} desc={desc} link={link} />
     </main>
   );
 }
