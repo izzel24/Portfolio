@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
+ @plugin "daisyui" {
+   themes: light --default;
+ }
 
 
 @theme{
@@ -72,3 +75,4 @@ input[type=range]::-webkit-slider-runnable-track {
   cursor: pointer;
   background-color: #000000;
 }
+
