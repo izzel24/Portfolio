@@ -11,7 +11,7 @@ export default function PortfolioModal({ imgUrl, skills = [], desc, link }) {
           <RiCloseLine size={20} />
         </button>
         <div className="flex flex-col gap-2 w-full h-full overflow-auto scrollbar-none pt-6 p-4">
-          <div className="relative min-h-[250px] h-full w-full z-10">
+          <div className="relative min-h-[250px] h-full w-full z-10 bg-gray-100">
             <img
               src={imgUrl}
               alt=""
@@ -31,7 +31,7 @@ export default function PortfolioModal({ imgUrl, skills = [], desc, link }) {
           <div className='flex flex-col w-full mt-1'>
             <div className='flex justify-between w-full'>
               <p className='text-xs'>Live Priview</p>
-              <a href={link} target='_blank' className='text-xs link link-primary'>{link}</a>
+              <a href={link} target='_blank' className='text-xs link link-primary line-clamp-1'>{link}</a>
             </div>
           </div>
         </div>
