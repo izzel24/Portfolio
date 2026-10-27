@@ -11,7 +11,7 @@ export default function PortfolioModal({ imgUrl, skills = [], desc, link }) {
           <RiCloseLine size={20} />
         </button>
         <div className="flex flex-col gap-2 w-full h-full overflow-auto scrollbar-none pt-6 p-4">
-          <div className="relative h-[500px] w-full z-10">
+          <div className="relative min-h-[250px] h-full w-full z-10">
             <img
               src={imgUrl}
               alt=""
