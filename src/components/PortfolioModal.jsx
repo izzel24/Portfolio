@@ -30,7 +30,7 @@ export default function PortfolioModal({ imgUrl, skills = [], desc, link }) {
           </div>
           <div className='flex flex-col w-full mt-1'>
             <div className='flex justify-between w-full'>
-              <p className='text-xs'>Live Privew</p>
+              <p className='text-xs'>Live Priview</p>
               <a href={link} target='_blank' className='text-xs link link-primary'>{link}</a>
             </div>
           </div>
