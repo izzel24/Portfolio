@@ -1,57 +1,98 @@
 import { useState } from 'react';
 import './App.css';
-import { RiArrowRightUpLine, RiInfoI, RiResetRightFill } from 'react-icons/ri';
+import {
+  RiArrowRightUpLine,
+  RiInfoI,
+  RiNextjsFill,
+  RiResetRightFill,
+  RiTailwindCssFill,
+} from 'react-icons/ri';
 import { LuLayoutGrid, LuLayoutPanelTop } from 'react-icons/lu';
 import { TfiLayoutGrid3, TfiLayoutMenuV } from 'react-icons/tfi';
 import PortfolioModal from './components/PortfolioModal';
+import { FaFigma, FaReact } from 'react-icons/fa';
 
 function App() {
   const projects = [
     {
       name: 'Frinaze',
-      image: '/frinaze.webp',
+      type: 'Company Profile Website',
+      image: ['/frinaze.webp'],
       link: 'https://frinaze.site',
       githubLink: '',
+      status: 'active',
+      startDate: 'Mar 2026',
+      endDate: 'Present',
       desc: 'A company profile website showcasing Frinaze’s web development services, portfolio, and digital solutions for small and medium-sized businesses.',
       skills: ['NextJS', 'TypeScript', 'TailwindCSS'],
     },
     {
-      name: 'QR Generator',
-      image: '/qrgenerator.webp',
+      name: 'Frinaze Tools',
+      type: 'Tools Website',
+      image: [
+        '/frinazeTools.webp',
+        '/qrgenerator.webp',
+        '/imageOptimizer.webp',
+        '/invoiceGenerator.webp',
+      ],
       link: 'https://tools.frinaze.site/qr-generator/url',
       githubLink: '',
+      startDate: 'Mar 2026',
+      endDate: 'Present',
+      status: 'active',
+      date: '',
       desc: 'A web-based QR code generator that allows users to create custom QR codes from URLs with a simple and user-friendly interface.',
       skills: ['NextJS', 'TypeScript', 'TailwindCSS'],
     },
     {
       name: 'RS SMS',
-      image: '/rssms.webp',
+      type: 'Company Profile Website',
+      image: ['/rssms.webp'],
       link: 'https://rssurabayamedicalservice.id',
       githubLink: '',
+      startDate: 'Dec 2025',
+      endDate: 'Present',
+      status: 'active',
       desc: 'A medical service website featuring hospital information, doctor directories, and health-related articles, supported by a custom admin dashboard for managing doctors and news content.',
       skills: ['ReactJS', 'JavaScript', 'TailwindCSS'],
     },
     {
       name: 'Harta Jaya',
-      image: '/hartajaya.webp',
+      type: 'Company Landing Page Website',
+      image: ['/hartajaya.webp'],
       link: 'https://www.hartajayatourntraveljatim.com/',
       githubLink: '',
+      startDate: 'Nov 2025',
+      endDate: 'Present',
+      status: 'active',
       desc: 'A responsive company profile and landing page for a tour and travel business, presenting travel services, company information, and key details to help potential customers explore available offerings.',
       skills: ['ReactJS', 'JavaScript', 'TailwindCSS'],
     },
     {
-      name: 'BEM FIA UB',
-      image: '/bemfiaub.webp',
-      link: 'https://www.bemfiaub.com/home',
+      name: 'BEM FIA UB 2025',
+      type: 'Organization Profile Website',
+      image: [
+        '/bemfiaub.webp',
+        '/bemfiaub2.webp',
+        '/bemfiaub3.webp',
+      ],
+      link: 'https://bemfiaub-ten.vercel.app/home',
       githubLink: '',
+      startDate: 'May 2025',
+      endDate: 'May 2026',
+      status: 'inactive',
       desc: 'An organizational profile website for BEM FIA UB, designed to showcase the organization’s identity, activities, programs, and information for students and visitors.',
       skills: ['ReactJS', 'JavaScript', 'TailwindCSS'],
     },
     {
       name: 'Maraksara',
-      image: '/maraksara.webp',
-      link: 'https://maraksara.id',
+      type: 'Education Website',
+      image: ['/maraksara.webp', '/maraksara1.webp', '/maraksara2.webp'],
+      link: '',
       githubLink: '',
+      status: 'inactive',
+      startDate: 'Aug 2025',
+      endDate: 'Aug 2026',
       desc: 'An educational website built to present learning programs and educational content through a user-friendly interface, with a Laravel backend supporting website content management.',
       skills: ['ReactJS', 'JavaScript', 'TailwindCSS'],
     },
@@ -66,10 +107,15 @@ function App() {
     return Number(localStorage.getItem('grayscale')) || 50;
   });
 
-  const [imgUrl, setImgUrl] = useState('');
+  const [imgUrl, setImgUrl] = useState([]);
   const [skills, setSkills] = useState([]);
   const [desc, setDesc] = useState('');
   const [link, setLink] = useState('');
+  const [name, setName] = useState('');
+  const [type, setType] = useState('');
+  const [status, setStatus] = useState('');
+  const [starDate, setStartDate] = useState('');
+  const [endDate, setEndDeate] = useState('');
 
   const [layout, setLayout] = useState(0);
   const [active, setActive] = useState(null);
@@ -122,7 +168,7 @@ function App() {
             About Me
           </span>
 
-          <div className="text-white text-sm sm:text-base space-y-4 max-w-xl">
+          <div className="text-white text-sm sm:text-base space-y-2 max-w-xl">
             <p>Hi there, I’m Henry. a web developer and designer.</p>
             <p>
               I build websites that are simple, functional, and enjoyable to
@@ -133,8 +179,14 @@ function App() {
             </p>
           </div>
 
-          <div className="py-2 px-4 bg-white text-black text-sm w-fit">
-            5+ Projects • ReactJS • TailwindCSS
+          {/* <div className="py-2 px-4 bg-white text-black text-sm w-fit">
+            ReactJS • NextJS • TailwindCSS
+          </div> */}
+
+          <div className="flex gap-5 mt-4">
+            <FaReact className="text-[#4f4e4e] text-5xl" />
+            <RiNextjsFill className="text-[#4f4e4e] text-5xl" />
+            <RiTailwindCssFill className="text-[#4f4e4e] text-5xl" />
           </div>
         </div>
 
@@ -259,6 +311,11 @@ function App() {
                     setSkills(project.skills);
                     setDesc(project.desc);
                     setLink(project.link);
+                    setName(project.name);
+                    setType(project.type);
+                    setStatus(project.status);
+                    setStartDate(project.startDate);
+                    setEndDeate(project.endDate);
                     document.getElementById('modal_portfolio').showModal();
                   }}
                   className="bg-[#222222] p-1.5 sm:p-2.5 rounded-br-2xl"
@@ -280,7 +337,7 @@ function App() {
                 </a>
               </div>
               <img
-                src={project.image}
+                src={project.image[0]}
                 alt={project.name}
                 className="w-full h-full object-cover transition-all duration-300"
               />
@@ -334,7 +391,17 @@ function App() {
       {/* <section id='contact' className='min-h-[500px] bg-[#fffaf3]'>
 
       </section> */}
-      <PortfolioModal imgUrl={imgUrl} skills={skills} desc={desc} link={link} />
+      <PortfolioModal
+        imgUrl={imgUrl}
+        skills={skills}
+        desc={desc}
+        link={link}
+        title={name}
+        type={type}
+        status={status}
+        startDate={starDate}
+        endDate={endDate}
+      />
     </main>
   );
 }
