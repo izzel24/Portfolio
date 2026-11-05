@@ -41,7 +41,7 @@ function App() {
       endDate: 'Present',
       status: 'active',
       date: '',
-      desc: 'A web-based QR code generator that allows users to create custom QR codes from URLs with a simple and user-friendly interface.',
+      desc: 'A collection of web-based tools designed to simplify everyday digital tasks, featuring utilities such as QR Code Generator, Image Optimizer, Invoice Generator, and Image Splitter through a simple and user-friendly interface.',
       skills: ['NextJS', 'TypeScript', 'TailwindCSS'],
     },
     {
@@ -71,11 +71,7 @@ function App() {
     {
       name: 'BEM FIA UB 2025',
       type: 'Organization Profile Website',
-      image: [
-        '/bemfiaub.webp',
-        '/bemfiaub2.webp',
-        '/bemfiaub3.webp',
-      ],
+      image: ['/bemfiaub.webp', '/bemfiaub2.webp', '/bemfiaub3.webp'],
       link: 'https://bemfiaub-ten.vercel.app/home',
       githubLink: '',
       startDate: 'May 2025',
@@ -358,21 +354,17 @@ function App() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 w-full max-w-6xl">
-          <div className="bg-[#222] p-5 rounded-lg text-white space-y-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 w-full max-w-6xl">
+          <div className="bg-[#222] p-5 rounded-lg row-span-2 text-white space-y-2">
             <h2 className="font-semibold">Frontend</h2>
-            <p className="text-sm text-white/70">
-              ReactJS, NextJS(still learn), TailwindCSS, Bootstrap
-            </p>
-            <p className="text-xs text-white/50">
-              Currently learning NextJS and TypeScript
-            </p>
+            <p className="text-sm text-white/70 break-after-all">ReactJS, NextJS, JavaScript, TypeScript, Component, React Lifecycle, Global State(Context, Zustand), Axios, TanStack (useQuery, useMutation)</p>
           </div>
 
           <div className="bg-[#222] p-5 rounded-lg text-white space-y-2">
             <h2 className="font-semibold">Styling</h2>
             <p className="text-sm text-white/70">
-              Flexbox, Grid, Animation, Responsive Design
+              Flexbox, Grid, Animation, Responsive Design, daisyUI, Bootstrap,
+              TailwindCSS
             </p>
           </div>
 
@@ -380,17 +372,17 @@ function App() {
             <h2 className="font-semibold">Backend</h2>
             <p className="text-sm text-white/70">Laravel (MVC), REST API</p>
           </div>
-
-          {/* DATABASE */}
           <div className="bg-[#222] p-5 rounded-lg text-white space-y-2">
             <h2 className="font-semibold">Database</h2>
             <p className="text-sm text-white/70">SQL, Join, CRUD Operations</p>
           </div>
+          <div className="bg-[#222] p-5 rounded-lg text-white space-y-2">
+            <h2 className="font-semibold">Tools</h2>
+            <p className="text-sm text-white/70">Figma, Git (GitHub, GitLab), Postman ,Trello</p>
+          </div>
         </div>
       </section>
-      {/* <section id='contact' className='min-h-[500px] bg-[#fffaf3]'>
-
-      </section> */}
+      <section id="contact" className="min-h-[500px] bg-[#fffaf3]"></section>
       <PortfolioModal
         imgUrl={imgUrl}
         skills={skills}

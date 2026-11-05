@@ -47,22 +47,20 @@ export default function PortfolioModal({
                   className="absolute object-contain h-full w-full"
                 />
               </div>
-              {imgUrl.length > 1 && (
-                <div className="flex gap-2 mb-2 min-h-14 overflow-x-auto overflow-y-hidden scrollbar-none  sm:hidden">
-                  {imgUrl.map((item, index) => (
-                    <div
-                      onMouseOver={() => setImgIndex(index)}
-                      onClick={() => setImgIndex(index)}
-                      className="relative h-14 aspect-10/8 cursor-pointer"
-                    >
-                      <img
-                        src={item}
-                        className="absolute object-cover h-full w-full"
-                      />
-                    </div>
-                  ))}
-                </div>
-              )}
+              <div className="flex gap-2 mb-2 min-h-14 overflow-x-auto overflow-y-hidden scrollbar-none  sm:hidden">
+                {imgUrl.map((item, index) => (
+                  <div
+                    onMouseOver={() => setImgIndex(index)}
+                    onClick={() => setImgIndex(index)}
+                    className="relative h-14 aspect-10/8 cursor-pointer"
+                  >
+                    <img
+                      src={item}
+                      className="absolute object-cover h-full w-full"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
 
             <div className="flex flex-col gap-4 sm:w-1/2 items-start text-xs">
@@ -115,23 +113,20 @@ export default function PortfolioModal({
               </div>
             </div>
           </div>
-          {imgUrl.length > 1 && (
-            <div className="flex gap-2 max-w-[55%] mb-2 min-h-20 overflow-x-auto overflow-y-hidden scrollbar-none hidden sm:flex">
-              {imgUrl.map((item, index) => (
-                <div
-                  onMouseOver={() => setImgIndex(index)}
-                  onClick={() => setImgIndex(index)}
-                  className="relative h-18 aspect-10/8 cursor-pointer"
-                >
-                  <img
-                    src={item}
-                    className="absolute object-cover h-full w-full"
-                  />
-                </div>
-              ))}
-            </div>
-          )}
-
+          <div className="flex gap-2 max-w-[55%] mb-2 min-h-20 overflow-x-auto overflow-y-hidden scrollbar-none hidden sm:flex">
+            {imgUrl.map((item, index) => (
+              <div
+                onMouseOver={() => setImgIndex(index)}
+                onClick={() => setImgIndex(index)}
+                className="relative h-18 aspect-10/8 cursor-pointer"
+              >
+                <img
+                  src={item}
+                  className="absolute object-cover h-full w-full"
+                />
+              </div>
+            ))}
+          </div>
           <div className="border-t-[0.5px] border-gray-200 pt-4 pb-2">
             <h1 className="text-xl font-bold">About This Project</h1>
             <p className="mt-1">{desc}</p>
