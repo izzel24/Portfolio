@@ -27,7 +27,7 @@ export default function PortfolioModal({
   const [imgIndex, setImgIndex] = useState(0);
   return (
     <dialog id="modal_portfolio" className="modal w-full">
-      <div className="modal-box rounded-none aspect-square sm:aspect-video min-w-[65%] relative p-0 overflow-y-auto">
+      <div className="modal-box rounded-none aspect-10/12 sm:aspect-video min-w-[65%] relative p-0 overflow-y-auto">
         <button
           onClick={() => {
             document.getElementById('modal_portfolio')?.close();
@@ -38,18 +38,34 @@ export default function PortfolioModal({
           <RiCloseLine size={25} />
         </button>
         <div className="flex flex-col gap-2 w-full h-full overflow-auto scrollbar-none pt-6 p-4">
-          <div className="flex gap-5 w-full">
-            <div className="flex flex-col w-[70%]">
-              <div className="relative min-h-25 sm:min-h-65 h-full w-full z-10 bg-gray-100">
+          <div className="flex flex-col md:flex-row gap-5 w-full">
+            <div className="flex flex-col gap-2 sm:w-[70%]">
+              <div className="relative min-h-40 sm:min-h-65 h-full w-full z-10 bg-gray-100">
                 <img
                   src={imgUrl[imgIndex]}
                   alt=""
                   className="absolute object-contain h-full w-full"
                 />
               </div>
+              {imgUrl.length > 1 && (
+                <div className="flex gap-2 mb-2 min-h-14 overflow-x-auto overflow-y-hidden scrollbar-none  sm:hidden">
+                  {imgUrl.map((item, index) => (
+                    <div
+                      onMouseOver={() => setImgIndex(index)}
+                      onClick={() => setImgIndex(index)}
+                      className="relative h-14 aspect-10/8 cursor-pointer"
+                    >
+                      <img
+                        src={item}
+                        className="absolute object-cover h-full w-full"
+                      />
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
 
-            <div className="flex flex-col gap-4 w-1/2 items-start text-xs">
+            <div className="flex flex-col gap-4 sm:w-1/2 items-start text-xs">
               <div className="flex pt-2 w-full items-center justify-between">
                 <div className="flex flex-col w-[70%]">
                   <h1 className="text-3xl font-bold ">{title}</h1>
@@ -100,7 +116,7 @@ export default function PortfolioModal({
             </div>
           </div>
           {imgUrl.length > 1 && (
-            <div className="flex gap-2 max-w-[55%] mb-2 min-h-20 overflow-x-auto overflow-y-hidden scrollbar-none">
+            <div className="flex gap-2 max-w-[55%] mb-2 min-h-20 overflow-x-auto overflow-y-hidden scrollbar-none hidden sm:flex">
               {imgUrl.map((item, index) => (
                 <div
                   onMouseOver={() => setImgIndex(index)}
