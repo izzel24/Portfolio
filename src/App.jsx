@@ -266,9 +266,7 @@ function App() {
           className={`grid ${layout === 3 ? 'grid-cols-1' : layout === 2 ? 'grid-cols-3' : 'grid-cols-2'} transition-all duration-300 lg:px-20 gap-1 sm:gap-2 lg:gap-4`}
         >
           <div className="col-span-full flex items-center gap-3 justify-between">
-            <h1 className="font-medium mb-2 text-3xl md:text-4xl">
-              Portfolio
-            </h1>
+            <h1 className="font-medium mb-2 text-3xl md:text-4xl">Portfolio</h1>
 
             <div className="flex bg-[#222222] p-1 *:text-xs *:sm:text-lg">
               <button
@@ -399,9 +397,7 @@ function App() {
         className="min-h-[500px] flex flex-col px-2 sm:px-10 lg:px-20 py-10 bg-[#fffaf3]"
       >
         <div className="flex flex-col">
-          <h1 className="font-medium text-3xl md:text-4xl">
-            Education
-          </h1>
+          <h1 className="font-medium text-3xl md:text-4xl">Education</h1>
           <p className="text-sm sm:text-base">
             Academic background & learning journey
           </p>
@@ -471,14 +467,14 @@ function App() {
                 <p className="text-xs sm:text-sm">React JS Bootcamp</p>
               </div>
               <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2 mt-2 text-[#000000a1]">
-                <div className='flex gap-2 items-center'>
-                <RiCalendar2Line />
-                <p className="text-xs sm:text-sm">Apr 2025 - May 2025 </p>
+                <div className="flex gap-2 items-center">
+                  <RiCalendar2Line />
+                  <p className="text-xs sm:text-sm">Apr 2025 - May 2025 </p>
                 </div>
                 <div className="divider divider-horizontal w-5"></div>
-                <div className='flex gap-2 items-center'>
+                <div className="flex gap-2 items-center">
                   <RiTrophyLine />
-                  <p>Top 4 of 17 participant</p>
+                  <p className="text-xs sm:text-sm">Top 4 of 17 participant</p>
                 </div>
               </div>
             </div>
