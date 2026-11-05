@@ -2,15 +2,21 @@ import { useState } from 'react';
 import './App.css';
 import {
   RiArrowRightUpLine,
+  RiBookOpenFill,
+  RiBookShelfLine,
+  RiCalendar2Line,
+  RiGraduationCapFill,
   RiInfoI,
   RiNextjsFill,
   RiResetRightFill,
   RiTailwindCssFill,
+  RiTrophyLine,
 } from 'react-icons/ri';
 import { LuLayoutGrid, LuLayoutPanelTop } from 'react-icons/lu';
 import { TfiLayoutGrid3, TfiLayoutMenuV } from 'react-icons/tfi';
 import PortfolioModal from './components/PortfolioModal';
 import { FaFigma, FaReact } from 'react-icons/fa';
+import { HiOutlineLibrary } from 'react-icons/hi';
 
 function App() {
   const projects = [
@@ -164,7 +170,7 @@ function App() {
             About Me
           </span>
 
-          <div className="text-white text-sm sm:text-base space-y-2 max-w-xl">
+          <div className="text-white text-sm sm:text-base max-w-xl">
             <p>Hi there, I’m Henry. a web developer and designer.</p>
             <p>
               I build websites that are simple, functional, and enjoyable to
@@ -260,7 +266,7 @@ function App() {
           className={`grid ${layout === 3 ? 'grid-cols-1' : layout === 2 ? 'grid-cols-3' : 'grid-cols-2'} transition-all duration-300 lg:px-20 gap-1 sm:gap-2 lg:gap-4`}
         >
           <div className="col-span-full flex items-center gap-3 justify-between">
-            <h1 className="font-medium text-2xl sm:text-3xl md:text-4xl">
+            <h1 className="font-medium mb-2 text-3xl md:text-4xl">
               Portfolio
             </h1>
 
@@ -357,7 +363,11 @@ function App() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 w-full max-w-6xl">
           <div className="bg-[#222] p-5 rounded-lg row-span-2 text-white space-y-2">
             <h2 className="font-semibold">Frontend</h2>
-            <p className="text-sm text-white/70 break-after-all">ReactJS, NextJS, JavaScript, TypeScript, Component, React Lifecycle, Global State(Context, Zustand), Axios, TanStack (useQuery, useMutation)</p>
+            <p className="text-sm text-white/70 break-after-all">
+              ReactJS, NextJS, JavaScript, TypeScript, Component, React
+              Lifecycle, Global State(Context, Zustand), Axios, TanStack
+              (useQuery, useMutation)
+            </p>
           </div>
 
           <div className="bg-[#222] p-5 rounded-lg text-white space-y-2">
@@ -378,11 +388,103 @@ function App() {
           </div>
           <div className="bg-[#222] p-5 rounded-lg text-white space-y-2">
             <h2 className="font-semibold">Tools</h2>
-            <p className="text-sm text-white/70">Figma, Git (GitHub, GitLab), Postman ,Trello</p>
+            <p className="text-sm text-white/70">
+              Figma, Git (GitHub, GitLab), Postman ,Trello
+            </p>
           </div>
         </div>
       </section>
-      <section id="contact" className="min-h-[500px] bg-[#fffaf3]"></section>
+      <section
+        id="contact"
+        className="min-h-[500px] flex flex-col px-2 sm:px-10 lg:px-20 py-10 bg-[#fffaf3]"
+      >
+        <div className="flex flex-col">
+          <h1 className="font-medium text-3xl md:text-4xl">
+            Education
+          </h1>
+          <p className="text-sm sm:text-base">
+            Academic background & learning journey
+          </p>
+        </div>
+        <div className="flex flex-col mt-10">
+          <div className="flex gap-2">
+            <div className="p-4 sm:p-8 bg-[#d1cec9] rounded-sm items-center justify-center hidden sm:flex">
+              <RiGraduationCapFill className="text-[#777673] text-[35px] sm:text-[40px]" />
+            </div>
+            <div className="flex flex-col justify-between px-3">
+              <div className="flex flex-col">
+                <h1 className="font-bold text-xl sm:text-2xl">
+                  Universitas Terbuka
+                </h1>
+                <p className="text-xs sm:text-sm">
+                  Bachelor of Information Systems
+                </p>
+              </div>
+              <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2 mt-2 text-[#000000a1]">
+                <div className="flex gap-2 items-center">
+                  <RiCalendar2Line />
+                  <p className="text-xs sm:text-sm">Nov 2026 - Present </p>
+                </div>
+                <div className="divider divider-horizontal w-5 hidden sm:flex"></div>
+                <div className="flex gap-2 items-center">
+                  <HiOutlineLibrary />
+                  <p className="text-xs sm:text-sm">Transfer Student</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="divider divider-neutral h-1 opacity-40"></div>
+          <div className="flex gap-2">
+            <div className="p-4 sm:p-8 bg-[#d1cec9] rounded-sm items-center justify-center hidden sm:flex">
+              <RiGraduationCapFill className="text-[#777673] text-[35px] sm:text-[40px]" />
+            </div>
+            <div className="flex flex-col justify-between px-3">
+              <div className="flex flex-col">
+                <h1 className="font-bold text-xl sm:text-2xl">
+                  Universitas Bunda Mulia
+                </h1>
+                <p className="text-xs sm:text-sm">
+                  Bachelor of Information Systems
+                </p>
+              </div>
+              <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2 mt-2 text-[#000000a1]">
+                <div className="flex gap-2 items-center">
+                  <RiCalendar2Line />
+                  <p className="text-xs sm:text-sm">Aug 2022 - Jan 2025 </p>
+                </div>
+                <div className="divider divider-horizontal w-5 hidden sm:flex"></div>
+                <div className="flex gap-2">
+                  <HiOutlineLibrary />
+                  <p className="text-xs sm:text-sm">Previous Institution</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="divider divider-neutral h-1 opacity-40"></div>
+          <div className="flex gap-2">
+            <div className="p-4 sm:p-8 bg-[#d1cec9] rounded-sm items-center justify-center hidden sm:flex">
+              <RiBookShelfLine size={40} className="text-[#777673]" />
+            </div>
+            <div className="flex flex-col justify-between px-3">
+              <div className="flex flex-col">
+                <h1 className="font-bold text-xl sm:text-2xl">Enigma Camp</h1>
+                <p className="text-xs sm:text-sm">React JS Bootcamp</p>
+              </div>
+              <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2 mt-2 text-[#000000a1]">
+                <div className='flex gap-2 items-center'>
+                <RiCalendar2Line />
+                <p className="text-xs sm:text-sm">Apr 2025 - May 2025 </p>
+                </div>
+                <div className="divider divider-horizontal w-5"></div>
+                <div className='flex gap-2 items-center'>
+                  <RiTrophyLine />
+                  <p>Top 4 of 17 participant</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <PortfolioModal
         imgUrl={imgUrl}
         skills={skills}
