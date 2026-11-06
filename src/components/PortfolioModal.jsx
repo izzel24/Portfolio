@@ -26,8 +26,18 @@ export default function PortfolioModal({
 }) {
   const [imgIndex, setImgIndex] = useState(0);
   return (
-    <dialog id="modal_portfolio" className="modal w-full">
-      <div className="modal-box rounded-none aspect-10/12 sm:aspect-video min-w-[65%] relative p-0 overflow-y-auto">
+    <dialog
+      id="modal_portfolio"
+      onClick={() => {
+        document.getElementById('modal_portfolio')?.close();
+        setImgIndex(0);
+      }}
+      className="modal w-full"
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="modal-box rounded-none aspect-10/12 sm:aspect-video min-w-[65%] relative p-0 overflow-y-auto"
+      >
         <button
           onClick={() => {
             document.getElementById('modal_portfolio')?.close();
@@ -47,12 +57,12 @@ export default function PortfolioModal({
                   className="absolute object-contain h-full w-full"
                 />
               </div>
-              <div className="flex gap-2 mb-2 min-h-14 overflow-x-auto overflow-y-hidden scrollbar-none  sm:hidden">
+              <div className="flex gap-2 mb-2 min-h-14 overflow-x-auto overflow-y-hidden scrollbar-none sm:hidden">
                 {imgUrl.map((item, index) => (
                   <div
                     onMouseOver={() => setImgIndex(index)}
                     onClick={() => setImgIndex(index)}
-                    className="relative h-14 aspect-10/8 cursor-pointer"
+                    className={`relative h-14 aspect-10/8 cursor-pointer`}
                   >
                     <img
                       src={item}
@@ -113,12 +123,12 @@ export default function PortfolioModal({
               </div>
             </div>
           </div>
-          <div className="flex gap-2 max-w-[55%] mb-2 min-h-20 overflow-x-auto overflow-y-hidden scrollbar-none hidden sm:flex">
+          <div className="gap-2 max-w-[55%] mb-2 min-h-20 overflow-x-auto overflow-y-hidden scrollbar-none hidden sm:flex">
             {imgUrl.map((item, index) => (
               <div
                 onMouseOver={() => setImgIndex(index)}
                 onClick={() => setImgIndex(index)}
-                className="relative h-18 aspect-10/8 cursor-pointer"
+                className={`relative h-18 aspect-10/8 cursor-pointer ${imgIndex === index && 'border-2 border-gray-400'}`}
               >
                 <img
                   src={item}

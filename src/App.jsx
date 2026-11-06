@@ -17,13 +17,14 @@ import { TfiLayoutGrid3, TfiLayoutMenuV } from 'react-icons/tfi';
 import PortfolioModal from './components/PortfolioModal';
 import { FaFigma, FaReact } from 'react-icons/fa';
 import { HiOutlineLibrary } from 'react-icons/hi';
+import { PiMapPinLineBold } from 'react-icons/pi';
 
 function App() {
   const projects = [
     {
       name: 'Frinaze',
       type: 'Company Profile Website',
-      image: ['/frinaze.webp'],
+      image: ['/frinaze.webp', '/frinaze2.webp'],
       link: 'https://frinaze.site',
       githubLink: '',
       status: 'active',
@@ -41,7 +42,7 @@ function App() {
         '/imageOptimizer.webp',
         '/invoiceGenerator.webp',
       ],
-      link: 'https://tools.frinaze.site/qr-generator/url',
+      link: 'https://tools.frinaze.site/',
       githubLink: '',
       startDate: 'Mar 2026',
       endDate: 'Present',
@@ -53,7 +54,7 @@ function App() {
     {
       name: 'RS SMS',
       type: 'Company Profile Website',
-      image: ['/rssms.webp'],
+      image: ['/rssms.webp', '/rssms2.webp', '/rssms3.webp'],
       link: 'https://rssurabayamedicalservice.id',
       githubLink: '',
       startDate: 'Dec 2025',
@@ -98,6 +99,18 @@ function App() {
       desc: 'An educational website built to present learning programs and educational content through a user-friendly interface, with a Laravel backend supporting website content management.',
       skills: ['ReactJS', 'JavaScript', 'TailwindCSS'],
     },
+    {
+      name: 'DPM FIA UB 2024',
+      type: 'Organization Profile Website',
+      image: ['/dpmfiaub.webp', '/dpmfiaub2.webp', '/dpmfiaub3.webp'],
+      link: 'https://dpmfiaub.vercel.app/#/',
+      githubLink: '',
+      status: 'inactive',
+      startDate: 'Oct 2024',
+      endDate: 'Oct 2025',
+      desc: 'An organizational profile website for DPM FIA UB, designed to showcase the organization’s identity, activities, programs, and information for students and visitors.',
+      skills: ['ReactJS', 'JavaScript', 'TailwindCSS'],
+    },
   ];
   const [brightness, setBrightness] = useState(() => {
     return Number(localStorage.getItem('brightness')) || 100;
@@ -138,7 +151,7 @@ function App() {
   };
 
   return (
-    <main className="font-montserrat">
+    <main className="font-montserrat" >
       <section className="bg-[#fffaf3] w-full grid grid-cols-1 px-10 lg:grid-cols-2 place-content-center items-center lg:px-20 min-h-screen py-10">
         <div className="text-[#222222] w-full space-y-3">
           <h1 className="font-semibold text-4xl md:text-7xl lg:text-[4.5vw] leading-tight">
@@ -155,6 +168,7 @@ function App() {
             <a href="#portfolio">Portfolio</a>
             <a href="#skills">Skills</a>
             {/* <a>Contact</a> */}
+            <a href="#education">Education & Experience</a>
             <a target="_blank" href="https://frinaze.site">
               Build Your Website
             </a>
@@ -359,7 +373,7 @@ function App() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 w-full max-w-6xl">
-          <div className="bg-[#222] p-5 rounded-lg row-span-2 text-white space-y-2">
+          <div className="bg-[#222] p-5 row-span-2 text-white space-y-2">
             <h2 className="font-semibold">Frontend</h2>
             <p className="text-sm text-white/70 break-after-all">
               ReactJS, NextJS, JavaScript, TypeScript, Component, React
@@ -368,7 +382,7 @@ function App() {
             </p>
           </div>
 
-          <div className="bg-[#222] p-5 rounded-lg text-white space-y-2">
+          <div className="bg-[#222] p-5 text-white space-y-2">
             <h2 className="font-semibold">Styling</h2>
             <p className="text-sm text-white/70">
               Flexbox, Grid, Animation, Responsive Design, daisyUI, Bootstrap,
@@ -376,25 +390,25 @@ function App() {
             </p>
           </div>
 
-          <div className="bg-[#222] p-5 rounded-lg text-white space-y-2">
+          <div className="bg-[#222] p-5 text-white space-y-2">
             <h2 className="font-semibold">Backend</h2>
             <p className="text-sm text-white/70">Laravel (MVC), REST API</p>
           </div>
-          <div className="bg-[#222] p-5 rounded-lg text-white space-y-2">
+          <div className="bg-[#222] p-5 text-white space-y-2">
             <h2 className="font-semibold">Database</h2>
             <p className="text-sm text-white/70">SQL, Join, CRUD Operations</p>
           </div>
-          <div className="bg-[#222] p-5 rounded-lg text-white space-y-2">
+          <div className="bg-[#222] p-5 text-white space-y-2">
             <h2 className="font-semibold">Tools</h2>
             <p className="text-sm text-white/70">
-              Figma, Git (GitHub, GitLab), Postman ,Trello
+              Figma, Git (GitHub, GitLab), Postman, Trello
             </p>
           </div>
         </div>
       </section>
       <section
-        id="contact"
-        className="min-h-[500px] flex flex-col px-2 sm:px-10 lg:px-20 py-10 bg-[#fffaf3]"
+        id="education"
+        className="min-h-[500px] flex flex-col gap-5 px-2 sm:px-10 lg:px-20 py-10 bg-[#fffaf3]"
       >
         <div className="flex flex-col">
           <h1 className="font-medium text-3xl md:text-4xl">Education</h1>
@@ -402,7 +416,7 @@ function App() {
             Academic background & learning journey
           </p>
         </div>
-        <div className="flex flex-col mt-10">
+        <div className="flex flex-col mb-3">
           <div className="flex gap-2">
             <div className="p-4 sm:p-8 bg-[#d1cec9] rounded-sm items-center justify-center hidden sm:flex">
               <RiGraduationCapFill className="text-[#777673] text-[35px] sm:text-[40px]" />
@@ -449,7 +463,7 @@ function App() {
                   <p className="text-xs sm:text-sm">Aug 2022 - Jan 2025 </p>
                 </div>
                 <div className="divider divider-horizontal w-5 hidden sm:flex"></div>
-                <div className="flex gap-2">
+                <div className="flex gap-2 items-center">
                   <HiOutlineLibrary />
                   <p className="text-xs sm:text-sm">Previous Institution</p>
                 </div>
@@ -479,6 +493,62 @@ function App() {
               </div>
             </div>
           </div>
+        </div>
+        <div className="flex flex-col">
+          <h1 className="font-medium text-3xl md:text-4xl">Experience</h1>
+          <p className="text-sm sm:text-base">My career journey so far</p>
+        </div>
+        <div className="flex flex-col">
+          <div className="flex gap-2">
+            <div className="p-4 sm:p-8 bg-[#d1cec9] rounded-sm items-center justify-center hidden sm:flex">
+              <RiGraduationCapFill className="text-[#777673] text-[35px] sm:text-[40px]" />
+            </div>
+            <div className="flex flex-col justify-between px-3">
+              <div className="flex flex-col">
+                <h1 className="font-bold text-xl sm:text-2xl">
+                  NoLimit Indonesia
+                </h1>
+                <p className="text-xs sm:text-sm">Frontend Developer Intern</p>
+              </div>
+              <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2 mt-2 text-[#000000a1]">
+                <div className="flex gap-2 items-center">
+                  <RiCalendar2Line />
+                  <p className="text-xs sm:text-sm">Jul 2026 - Oct 2026 </p>
+                </div>
+                <div className="divider divider-horizontal w-5 hidden sm:flex"></div>
+                <div className="flex gap-2 items-center">
+                  <PiMapPinLineBold />
+                  <p className="text-xs sm:text-sm">Bandung</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="divider divider-neutral h-1 opacity-40"></div>
+          <div className="flex gap-2">
+            <div className="p-4 sm:p-8 bg-[#d1cec9] rounded-sm items-center justify-center hidden sm:flex">
+              <RiGraduationCapFill className="text-[#777673] text-[35px] sm:text-[40px]" />
+            </div>
+            <div className="flex flex-col justify-between px-3">
+              <div className="flex flex-col">
+                <h1 className="font-bold text-xl sm:text-2xl">
+                  Self Employed
+                </h1>
+                <p className="text-xs sm:text-sm">Freelance Website Developer</p>
+              </div>
+              <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2 mt-2 text-[#000000a1]">
+                <div className="flex gap-2 items-center">
+                  <RiCalendar2Line />
+                  <p className="text-xs sm:text-sm">Oct 2024 - Present </p>
+                </div>
+                <div className="divider divider-horizontal w-5 hidden sm:flex"></div>
+                <div className="flex gap-2 items-center">
+                  <PiMapPinLineBold />
+                  <p className="text-xs sm:text-sm">Tangerang</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* <div className="divider divider-neutral h-1 opacity-40"></div> */}
         </div>
       </section>
       <PortfolioModal
