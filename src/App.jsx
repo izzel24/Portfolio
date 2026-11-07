@@ -7,6 +7,8 @@ import {
   RiCalendar2Line,
   RiGraduationCapFill,
   RiInfoI,
+  RiLightbulbFill,
+  RiLightbulbFlashFill,
   RiNextjsFill,
   RiResetRightFill,
   RiTailwindCssFill,
@@ -151,7 +153,7 @@ function App() {
   };
 
   return (
-    <main className="font-montserrat" >
+    <main className="font-montserrat">
       <section className="bg-[#fffaf3] w-full grid grid-cols-1 px-10 lg:grid-cols-2 place-content-center items-center lg:px-20 min-h-screen py-10">
         <div className="text-[#222222] w-full space-y-3">
           <h1 className="font-semibold text-4xl md:text-7xl lg:text-[4.5vw] leading-tight">
@@ -501,7 +503,7 @@ function App() {
         <div className="flex flex-col">
           <div className="flex gap-2">
             <div className="p-4 sm:p-8 bg-[#d1cec9] rounded-sm items-center justify-center hidden sm:flex">
-              <RiGraduationCapFill className="text-[#777673] text-[35px] sm:text-[40px]" />
+              <RiLightbulbFlashFill className="text-[#777673] text-[35px] sm:text-[40px]" />
             </div>
             <div className="flex flex-col justify-between px-3">
               <div className="flex flex-col">
@@ -526,14 +528,14 @@ function App() {
           <div className="divider divider-neutral h-1 opacity-40"></div>
           <div className="flex gap-2">
             <div className="p-4 sm:p-8 bg-[#d1cec9] rounded-sm items-center justify-center hidden sm:flex">
-              <RiGraduationCapFill className="text-[#777673] text-[35px] sm:text-[40px]" />
+              <RiLightbulbFlashFill className="text-[#777673] text-[35px] sm:text-[40px]" />
             </div>
             <div className="flex flex-col justify-between px-3">
               <div className="flex flex-col">
-                <h1 className="font-bold text-xl sm:text-2xl">
-                  Self Employed
-                </h1>
-                <p className="text-xs sm:text-sm">Freelance Website Developer</p>
+                <h1 className="font-bold text-xl sm:text-2xl">Self Employed</h1>
+                <p className="text-xs sm:text-sm">
+                  Freelance Website Developer
+                </p>
               </div>
               <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2 mt-2 text-[#000000a1]">
                 <div className="flex gap-2 items-center">
