@@ -5,6 +5,7 @@ import {
   RiBookOpenFill,
   RiBookShelfLine,
   RiCalendar2Line,
+  RiEyeLine,
   RiGraduationCapFill,
   RiInfoI,
   RiLightbulbFill,
@@ -21,6 +22,13 @@ import { FaFigma, FaReact } from 'react-icons/fa';
 import { HiOutlineLibrary } from 'react-icons/hi';
 import { PiMapPinLineBold } from 'react-icons/pi';
 import Footer from './components/Footer';
+import { Document, Page, pdfjs } from 'react-pdf';
+import CvModal from './components/CvModal';
+
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+  'pdfjs-dist/build/pdf.worker.min.mjs',
+  import.meta.url,
+).toString();
 
 function App() {
   const projects = [
@@ -135,6 +143,7 @@ function App() {
   const [starDate, setStartDate] = useState('');
   const [endDate, setEndDeate] = useState('');
 
+
   const [layout, setLayout] = useState(0);
   const [active, setActive] = useState(null);
 
@@ -152,6 +161,7 @@ function App() {
       localStorage.setItem('grayscale', val);
     }
   };
+
 
   return (
     <div className="bg-[#fffaf3]">
@@ -563,6 +573,43 @@ function App() {
             {/* <div className="divider divider-neutral h-1 opacity-40"></div> */}
           </div>
         </section>
+        <section
+          id="cv"
+          className="bg-[#161616] px-5 sm:px-10 lg:px-20 py-16 flex flex-col gap-10 items-center"
+        >
+          <div className="flex flex-col items-center gap-3 text-center">
+            <h1 className="text-white font-medium text-3xl md:text-4xl">
+              Curriculum Vitae & Certificates
+            </h1>
+            {/* <p className="text-white/70 text-sm sm:text-base max-w-md">
+              Still improving, but here’s what I’ve worked with so far.
+            </p> */}
+          </div>
+          <div className="flex gap-4">
+            <div className="flex items-start">
+              <a
+                href="/CV Henry Frizzel Johanis.pdf"
+                download={'CV_Henry'}
+                className="py-2 flex items-center w-full px-8 bg-[#fffaf3]"
+              >
+                <p className="text-base w-full">Download CV</p>
+              </a>
+              <button onClick={() => document.getElementById('modal_cv').showModal()} className="py-2 px-4 h-full  flex items-center bg-[#2d2d2d] text-[#fffaf3]">
+                <RiEyeLine className="text-base" />
+              </button>
+            </div>
+            <div className="">
+              <a
+                href="https://drive.google.com/drive/folders/1Qho6u9WwVZ77oEDdvXY19uw7d_giTw-Z?usp=sharing"
+                target="_blank"
+                className="py-2 flex items-center px-8 bg-[#fffaf3]"
+              >
+                <p className="text-base">See Certificates</p>
+              </a>
+            </div>
+          </div>
+        </section>
+        <CvModal />
         <PortfolioModal
           imgUrl={imgUrl}
           skills={skills}
